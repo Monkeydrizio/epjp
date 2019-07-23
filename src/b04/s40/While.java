@@ -12,5 +12,29 @@ public class While {
                 condition = false;
             }
         }
+        
+        int[] array = {3,6,8,5,9};
+        
+        // col ciclo while
+        
+        int i =0;
+        
+        while(array[i]%3 == 0) {
+        	System.out.println("Maurizio sei bellissimo e il numero " + array[i] + " è divisibile per tre");
+        	i +=1;
+        	}
+        
+         // col ciclo for
+        
+        for(int j=0; j< array.length; j++) {
+        	if(j %2 == 1) {      
+        	continue;                // solo posizioni dispari nell'array
+        	}
+        	if(array[j]%3 == 0) {
+        	System.out.println(array[j]);
+        }
     }
+    
+   
+}
 }
