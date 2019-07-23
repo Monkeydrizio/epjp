@@ -2,8 +2,8 @@ package b03;
 
 public class S30 {
     public static void main(String[] args) {
-        int value = 1;
-
+        double value = 1.5;
+        		
         System.out.println(value); // 1
 
         System.out.println(++value); // 2
