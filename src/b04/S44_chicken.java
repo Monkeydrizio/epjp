@@ -5,7 +5,7 @@ public class S44_chicken {
 	static final double DEFAULT_WEIGHT = 1.0;
 	static final String DEFAULT_NAME = "Unknown";
 	static final boolean DEFAULT_FEMALE = true;
-
+	
 	String name;
 	double weight;
 	boolean female;
