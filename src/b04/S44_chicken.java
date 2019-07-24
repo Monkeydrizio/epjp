@@ -43,3 +43,5 @@ public class S44_chicken {
 		return "S44_chicken [name=" + name + ", weight=" + weight + ", female=" + female + "]";
 	}
 }
+
+
