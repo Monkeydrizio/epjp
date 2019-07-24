@@ -9,8 +9,8 @@ public class S44_Main {
 		S44_chicken c3 = new S44_chicken("Genoveffa", 497.12);
 		S44_chicken c4 = new S44_chicken("Enrico", 1000, false); // Il galletto
 
-		System.out.println(c3 + "\n" + c4); // "\n" va a capo, la stringa in mezzo trasforma i due oggetti in stringhe
-											// da stampare, in caso constrario si può usare il .toString()
+		System.out.println(c1 + "\n" + c2); // "\n" va a capo, la stringa in mezzo trasforma i due oggetti in stringhe
+		System.out.println(c3 + "\n" + c4);	// da stampare, in caso constrario si può usare il .toString()
 
 		
 		System.out.println(String.valueOf(c4));
