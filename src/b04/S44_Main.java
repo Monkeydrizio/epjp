@@ -12,5 +12,7 @@ public class S44_Main {
 		System.out.println(c3 + "\n" + c4); // "\n" va a capo, la stringa in mezzo trasforma i due oggetti in stringhe
 											// da stampare, in caso constrario si può usare il .toString()
 
+		
+		System.out.println(String.valueOf(c4));
 	}
 }

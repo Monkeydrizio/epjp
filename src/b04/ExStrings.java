@@ -52,7 +52,50 @@ public class ExStrings {
 		for (String j : abc1) {
 			System.out.println(j);
 		}
+		
+		
+		// esercizi metodi di StringBuilder
+		
+		
+		String d = "compare";
 
+		StringBuilder fire = new StringBuilder(a);  // non dare mai reference a oggetti con lettere maiuscole (si usano solamente
+		
+		System.out.println(fire);
+		
+		System.out.println(fire.append(d).append(" arfio"));
+		
+		System.out.println(fire.charAt(0));
+		
+		System.out.println(fire.delete(0, 12));
+		
+		fire.ensureCapacity(20); // solo ragioni di performance
+		
+		System.out.println("index di mate: " + fire.indexOf("mate"));
+		System.out.println("index di arfio: " + fire.indexOf("arfio"));
+		
+		System.out.println("length attuale: " + fire.length());
+		
+		System.out.println(fire.insert(13, "mio "));
+		
+		System.out.println("length attuale: " + fire.length());
+		
+		System.out.println(fire.replace(13, 22, "Michele "));
+		
+		System.out.println(fire.reverse());
+		System.out.println(fire.reverse());
+		
+		fire.setCharAt(20, '!');
+		
+		System.out.println(fire);
+		
+		System.out.println("length attuale: " + fire.length());
+		fire.setLength(50);
+		System.out.println("length attuale: " + fire.length());
+		
+		d = fire.toString();
+		
+		System.out.println(d);
 	}
 
 }
