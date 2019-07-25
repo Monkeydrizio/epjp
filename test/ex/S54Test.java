@@ -50,6 +50,13 @@ class S54Test {
     }
 
     @Test
+    void asWordsix() {
+        String actual = S54.asWord(6);
+
+        assertThat(actual, is("six"));
+    }
+    
+    @Test
     void asWordOther() {
         String actual = S54.asWord(42);
 
