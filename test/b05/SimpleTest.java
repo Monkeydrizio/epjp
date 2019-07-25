@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 class SimpleTest {
 
-	@Test
-	void IsEvenTrue() {
+	@Test   // dice a JUnit che il metodo seguente deve essere eseguito come test
+	void IsEvenTrue() {       
 		Simple simple = new Simple();
 		boolean result = simple.isEven(42);
 
@@ -17,9 +17,16 @@ class SimpleTest {
 	@Test
 	void IsEvenFalse() {
 		Simple simple = new Simple();
-		boolean result = simple.isEven(43);
+		boolean result = simple.isEven(-43);
 
 		assertFalse(result);
 	}
+	
+	@Test   
+	void IsEvenZero() {       
+		Simple simple = new Simple();
+		boolean result = simple.isEven(0);
 
+		assertTrue(result);
+	}
 }
