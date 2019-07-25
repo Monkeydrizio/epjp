@@ -65,7 +65,7 @@ class S54Test {
 
     @Test
     void voteLowA() {
-        char actual = S54.vote(90.01);
+        char actual = S54.vote(95);
 
         assertThat(actual, is('A'));
     }
@@ -99,5 +99,25 @@ class S54Test {
         assertThat(actual[0], is(1));
         assertThat(actual[1], is(2));
         assertThat(actual[2], is(3));
+    }
+    
+    @Test
+    void sortPlain2() {
+        int[] actual = S54.sort(10, 15, 20);
+
+        assertThat(actual.length, is(3));
+        assertThat(actual[0], is(10));
+        assertThat(actual[1], is(15));
+        assertThat(actual[2], is(20));
+    }
+    
+    @Test
+    void sortPlain3() {
+        int[] actual = S54.sort(0, 400, 0);
+
+        assertThat(actual.length, is(3));
+        assertThat(actual[0], is(0));
+        assertThat(actual[1], is(0));
+        assertThat(actual[2], is(400));
     }
 }

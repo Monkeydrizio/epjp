@@ -41,29 +41,44 @@ public class S54 {
 	 * @return "zero" for 0 ... "nine" for 9, or "other"
 	 */
 	public static String asWord(int value) {
-		if (value == 0) {
-			return "zero";
-		} else if (value == 1) {
-			return "one";
-		} else if (value == 2) {
-			return "two";
-		} else if (value == 3) {
-			return "three";
-		} else if (value == 4) {
-			return "four";
-		} else if (value == 5) {
-			return "five";
-		} else if (value == 6) {
-			return "six";
-		} else if (value == 7) {
-			return "seven";
-		} else if (value == 8) {
-			return "eight";
-		} else if (value == 9) {
-			return "nine";
-		} else {
-			return "other";
+		String result;
+		switch (value) {
+		case 0:
+			result = "zero";
+			break;
+		case 1:
+			result = "one";
+			break;
+		case 2:
+			result = "two";
+			break;
+		case 3:
+			result = "three";
+			break;
+		case 4:
+			result = "four";
+			break;
+		case 5:
+			result = "five";
+			break;
+		case 6:
+			result = "six";
+			break;
+		case 7:
+			result = "seven";
+			break;
+		case 8:
+			result = "eight";
+			break;
+		case 9:
+			result = "nine";
+			break;
+
+		default:
+			result = "other";
+			break;
 		}
+		return result;
 	}
 
 	/**
@@ -76,8 +91,22 @@ public class S54 {
 	 * @return a letter in [A, F]
 	 */
 	public static char vote(double percentile) {
-		// TODO
-		return 'F';
+
+		if (percentile >= 0 && percentile <= 50) {
+			return 'F';
+		} else if (percentile > 50 && percentile <= 60) {
+			return 'E';
+		} else if (percentile > 60 && percentile <= 70) {
+			return 'D';
+		} else if (percentile > 70 && percentile <= 80) {
+			return 'C';
+		} else if (percentile > 80 && percentile <= 90) {
+			return 'B';
+		} else // if (percentile > 90)
+		{
+			return 'A';
+		}
+
 	}
 
 	/**
@@ -87,8 +116,19 @@ public class S54 {
 	 * @return true if leap year
 	 */
 	public static boolean isLeapYear(int year) {
-		// TODO
-		return false;
+		if (year % 4 == 0) {
+			if (year % 100 == 0) {
+				if (year % 400 == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -101,9 +141,10 @@ public class S54 {
 	 */
 	public static int[] sort(int a, int b, int c) {
 		int[] result = new int[3];
-
-		// TODO
-
+		result[2] = Math.max(Math.max(a, b),c);
+		result[0] = Math.min(Math.min(a,b),c);
+		result[1] = a + b + c - result[2] - result[0];			
 		return result;
-	}
+	
+}
 }
