@@ -67,21 +67,45 @@ class S55Test {
     @Test
     void factorialFour() {
         long actual = S55.factorial(4);
-        
+
         assertThat(actual, is(24L));
+    }
+    
+    @Test
+    void factorialZero() {
+        long actual = S55.factorial(0);
+
+        assertThat(actual, is(1L));
     }
 
     @Test
     void factorialNegative() {
         long actual = S55.factorial(-4);
-        
+
         assertThat(actual, is(0L));
     }
 
     @Test
-    void fibonacci() {
-        fail("Not yet implemented");
+    void fibonacciZero() {
+        long actual = S55.fibonacci(-3);
+        
+        assertThat(actual, is(0L));
     }
+    
+    @Test
+    void fibonacciQuarto() {
+        long actual = S55.fibonacci(4);
+        
+        assertThat(actual, is(2L));
+    }
+    
+    @Test
+    void fibonacciQuinto() {
+        long actual = S55.fibonacci(5);
+        
+        assertThat(actual, is(3L));
+    }
+
 
     @Test
     void multiplicationTable() {

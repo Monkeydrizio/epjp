@@ -4,27 +4,50 @@ public class S55 {
     /**
      * Add up all the numbers in the passed closed interval
      * 
-     * @param first the left limit
-     * @param last the right limit
+     * @param first
+     *            the left limit
+     * @param last
+     *            the right limit
      * @return the sum of all the numbers, or zero
      */
     public static long sum(int first, int last) {
-        // TODO
-        return 0;
+        long sum = 0;
+        if (first <= last) {
+            for (int i = first; i <= last; i++) {
+                sum = sum + i;
+            }
+            return sum;
+        } else {
+            return sum = 0;
+
+        }
+
     }
 
     /**
      * Add up only the even numbers in the passed closed interval
      * 
-     * @param first the left limit
-     * @param last the right limit
+     * @param first
+     *            the left limit
+     * @param last
+     *            the right limit
      * @return the sum of all the even numbers, or zero
      */
     public static long evenSum(int first, int last) {
-        // TODO
-        return 0;
+        long sum = 0;
+        if (first <= last) {
+            for (int i = first; i <= last; i++) {
+                if (i % 2 == 0) {
+                    sum = sum + i;
+                }
+            }
+            return sum;
+        } else {
+            return sum = 0;
+
+        }
     }
-    
+
     /**
      * Factorial
      * 
@@ -32,22 +55,47 @@ public class S55 {
      * @return factorial of input value, or zero
      */
     public static long factorial(int value) {
-        // TODO
-        return 0;
+        long fact = 1;
+        if (value >= 0 && value <= 30) {
+            for (int i = 1; i <= value; i++) {
+                fact = fact * i;
+            }
+            return fact;
+        } else {
+            return fact = 0;
+        }
     }
-    
+
     /**
      * Fibonacci number (0, 1, 1, 2, 3, 5, 8, …)
      * 
      * @param value
      * @return the Fibonacci number of value, or zero
      */
-    public static long fibonacci(int value) {
-        // TODO
-        return 0;
-    }
-    
+//    public static long fibonacci(int value) {
+//        long requested;
+//        long previous1;
+//        long previous2;
+//        if (value == 0) {
+//            requested = 0;
+//        }
+//        if (value == 1) {
+//            requested = 1;
+//        }
+//        if (value >= 2) {
+//            previous1 = 1;
+//            previous2 = 0;
+//            for (int i = 0; i <= value; i++) {                                     
+//                requested = previous1 + previous1;
+//            }
+//            return requested;
+//        } else {
+//            return requested;
+//        }
+//    }
+
     /**
+     *
      * Multiplication table
      * 
      * @param value
@@ -57,7 +105,7 @@ public class S55 {
         int[][] result = new int[0][0];
 
         // TODO
-        
+
         return result;
     }
 }
