@@ -122,7 +122,7 @@ public class S56 {
 
     public static int max(int[] data) {
         int max = 0;
-        for (int i = 0; i <= data.length - 1; i++) {
+        for (int i = 0; i < data.length; i++) {
             max = Math.max(max, data[i]);
         }
         return max;
