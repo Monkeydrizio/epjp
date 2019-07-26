@@ -15,10 +15,25 @@ class S56Test {
     }
 
     @Test
+    void reverseStringPlain2() {
+        String actual = S56.reverse("pil");
+
+        assertThat(actual, is("lip"));
+    }
+
+    
+    @Test
     void isPalindromePlain() {
         boolean actual = S56.isPalindrome("abba");
 
         assertThat(actual, is(true));
+    }
+    
+    @Test
+    void isPalindromePlain2() {
+        boolean actual = S56.isPalindrome("ciao");
+
+        assertThat(actual, is(false));
     }
 
     @Test
@@ -59,5 +74,13 @@ class S56Test {
 
         assertThat(actual, is(3));
     }
+    
+    @Test
+    void maxPlain2() {
+        int actual = S56.max(new int[] {2, 5000, 187});
+
+        assertThat(actual, is(5000));
+    }
+
 
 }
