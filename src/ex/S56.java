@@ -40,7 +40,7 @@ public class S56 {
 
         StringBuilder sb = new StringBuilder(s);
         StringBuilder sbnv = new StringBuilder();
-        for (int i = 0; i <= s.length() - 1; i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (sb.charAt(i) != 'a' && sb.charAt(i) != 'e' && sb.charAt(i) != 'i' && sb.charAt(i) != 'o'
                     && sb.charAt(i) != 'u') {
                 sbnv.append(sb.charAt(i)); // non posso utilizzare il setCharAt perchè sbnv era vuoto e il setCharAt va
@@ -60,18 +60,27 @@ public class S56 {
 
     public static int bin2dec(String s) {
 
-        StringBuilder sb = new StringBuilder(s);
         Double dec = new Double(0);
-        for (int i = 0; i <= s.length() - 1; i++) {
-            if (sb.reverse().charAt(i) == '0') {
-                dec = dec + 0;
-            } else if (sb.reverse().charAt(i) == '1') {
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == '1') {
                 dec = dec + Math.pow(2, i);
             }
-
         }
         return dec.intValue();
     }
+
+    // StringBuilder sb = new StringBuilder(s);
+    // Double dec = new Double(0);
+    // for (int i = 0; i < s.length() ; i++) {
+    // if (sb.reverse().charAt(i) == '0') {
+    // dec = dec + 0;
+    // } else if (sb.reverse().charAt(i) == '1') {
+    // dec = dec + Math.pow(2, i);
+    // }
+    //
+    // }
+    // return dec.intValue();
+    // }
 
     /**
      * Reverse an array of integers
@@ -82,7 +91,7 @@ public class S56 {
 
     public static int[] reverse(int[] data) {
         int[] result = new int[data.length];
-        for (int i = 0; i <= data.length - 1; i++) {
+        for (int i = 0; i < data.length; i++) {
             result[i] = data[data.length - 1 - i];
         }
         return result;
@@ -97,7 +106,7 @@ public class S56 {
 
     public static double average(int[] data) {
         int result = 0;
-        for (int i = 0; i <= data.length - 1; i++) {
+        for (int i = 0; i < data.length; i++) {
             result = result + data[i];
         }
         result = result / data.length;
@@ -113,7 +122,7 @@ public class S56 {
 
     public static int max(int[] data) {
         int max = 0;
-        for(int i = 0; i<=data.length-1; i++ ) {
+        for (int i = 0; i <= data.length - 1; i++) {
             max = Math.max(max, data[i]);
         }
         return max;
