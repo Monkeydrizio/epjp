@@ -139,6 +139,7 @@ public class S54 {
 	 * @param c
 	 * @return a sorted array
 	 */
+	
 	public static int[] sort(int a, int b, int c) {
 		int[] result = new int[3];
 		result[2] = Math.max(Math.max(a, b),c);

@@ -1,6 +1,5 @@
 package ex;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -70,7 +69,7 @@ class S55Test {
 
         assertThat(actual, is(24L));
     }
-    
+
     @Test
     void factorialZero() {
         long actual = S55.factorial(0);
@@ -88,27 +87,54 @@ class S55Test {
     @Test
     void fibonacciZero() {
         long actual = S55.fibonacci(-3);
-        
+
         assertThat(actual, is(0L));
     }
-    
+
     @Test
     void fibonacciQuarto() {
         long actual = S55.fibonacci(4);
-        
+
         assertThat(actual, is(2L));
     }
-    
+
     @Test
     void fibonacciQuinto() {
         long actual = S55.fibonacci(5);
-        
+
         assertThat(actual, is(3L));
     }
 
+    @Test
+    void fibonacciSettimo() {
+        long actual = S55.fibonacci(7);
+
+        assertThat(actual, is(8L));
+    }
 
     @Test
     void multiplicationTable() {
-        fail("Not yet implemented");
+        
+        int[][] expected = {{ 0, 1, 2, 3, 4, 5 },
+                            { 1, 1, 2, 3, 4, 5 },
+                            { 2, 2, 4, 6, 8, 10 },
+                            { 3, 3, 6, 9, 12, 15 },
+                            { 4, 4, 8, 12, 16, 20 },
+                            { 5, 5, 10, 15, 20, 25 }};
+        
+        int[][] actual = S55.multiplicationTable(5);
+        
+        assertThat(actual, is(expected));
+    }
+    
+    @Test
+    void multiplicationTableZero() {
+        
+        int[][] expected = {{ 0 },
+                           };
+        
+        int[][] actual = S55.multiplicationTable(0);
+        
+        assertThat(actual, is(expected));
     }
 }
