@@ -2,19 +2,20 @@ package b06.s066;
 
 public class Main {
     public static void main(String[] args) {
-        Barker[] barkers = new Barker[2];
+        Barker[] barkers = new Barker[3];
         
         barkers[0] = new Fox();
         barkers[1] = new Dog();
-
+        barkers[2] = new Fox();
+       
         for(Barker barker: barkers) {
             System.out.println(barker.bark());
         }
         
-        BarkAndWag baw = new Dog();
+        BarkAndWag baw = new Dog(); // baw è un reference di tipo interfaccia all'ogetto dog
         System.out.println(baw.tailWaggingSpeed());
 
         Dog dog = new Dog();
-        System.out.println(dog.bark(3));
+        System.out.println(dog.bark(10));
     }
 }
