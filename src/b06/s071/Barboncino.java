@@ -16,19 +16,23 @@ public class Barboncino extends Dog {
     }
 
     public Barboncino(String name) {
-        this(name, DEFAULT_WEIGHT, DEFAULT_DENSITA_RICCIO);
+        this(name, DEFAULT_WEIGHT, DEFAULT_SPEED, DEFAULT_DENSITA_RICCIO);
     }
 
     public Barboncino(int weight) {
-        this(DEFAULT_NAME, weight);
+        this(DEFAULT_NAME, weight, DEFAULT_SPEED, DEFAULT_DENSITA_RICCIO);
     }
 
     public Barboncino(String name, int weight) {
-        this(name, weight, DEFAULT_DENSITA_RICCIO);
+        this(name, weight, DEFAULT_SPEED, DEFAULT_DENSITA_RICCIO);
+    }
+    
+    public Barboncino(String name, int weight, double speed) {
+        this(name, weight, speed, DEFAULT_DENSITA_RICCIO);
     }
 
-    public Barboncino(String name, int weight, int densita_riccio) {
-        super(name, weight);
+    public Barboncino(String name, int weight, double speed, int densita_riccio) {
+        super(name, weight, speed);
         this.densita_riccio = densita_riccio;
     }
 
