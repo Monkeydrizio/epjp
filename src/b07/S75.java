@@ -1,7 +1,5 @@
 package b07;
 
-import b07.S75.PaperinoException;
-
 public class S75 {
     public void f() {
         try {
@@ -19,7 +17,7 @@ public class S75 {
             throw new Exception();
         }
     }
-    
+
     private void cleanup() {
         System.out.println("performing cleanup");
     }
@@ -27,16 +25,18 @@ public class S75 {
     private boolean somethingUnexpected() {
         return true;
     }
-    
-    class PaperinoException extends Exception{
+
+    class PaperinoException extends Exception {
+        private static final long serialVersionUID = 1L;
+
         public PaperinoException(String message) {
             super(message);
         }
     }
-    
+
     int first(int[] values) throws PaperinoException {
-        if (values == null || values.length ==0) {
-   //         throw new IllegalArgumentException("Sei un pirla");
+        if (values == null || values.length == 0) {
+            // throw new IllegalArgumentException("Sei un pirla");
             throw new PaperinoException("Sei un pirla");
         }
         return values[0];
@@ -44,13 +44,13 @@ public class S75 {
 
     public static void main(String[] args) {
         S75 exceptional = new S75();
-        exceptional.f();           
-             
+        exceptional.f();
+
         try {
             exceptional.first(null);
         } catch (PaperinoException e) {
             System.out.println("Exc: " + e.getMessage());
         }
-        
+
     }
 }

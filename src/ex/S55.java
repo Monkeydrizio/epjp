@@ -26,6 +26,13 @@ public class S55 {
 
     }
 
+    public static long sumEx(int first, int last) throws Exception { // Version with exception
+        if ((first >= last)) {
+            throw new Exception("You're stupid mate, the first number is bigger than the last one");
+        }
+        return sum(first, last);
+    }
+
     /**
      * Add up only the even numbers in the passed closed interval
      * 
@@ -70,6 +77,20 @@ public class S55 {
         }
     }
 
+    public static long factorialEx(int value) throws Exception { // Version with exception
+        long fact = 1;
+        if (value <= 0) {
+            throw new Exception("You're stupid mate, I am not able to calculate factorial of a negative numb");
+        }
+        if (value >= 30) {
+            throw new Exception("Sorry mate, the number is huge for my limited resources");
+        }
+        for (int i = 1; i <= value; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+
     /**
      * Fibonacci number (0, 1, 1, 2, 3, 5, 8, …)
      * 
@@ -107,7 +128,7 @@ public class S55 {
      */
 
     public static int[][] multiplicationTable(int value) {
-        int[][] result = new int[value+1][value+1];
+        int[][] result = new int[value + 1][value + 1];
         for (int i = 0; i <= value; i++) {
             for (int j = 0; j <= value; j++) {
                 result[i][0] = i;
