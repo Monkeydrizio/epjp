@@ -33,6 +33,13 @@ public class S094 {
             System.out.print(it.next() + " ");
         }
         System.out.println('}');
+        
+        System.out.print("{ ");
+        for (Integer value:coll) {
+            System.out.print(value + " ");
+        }
+        System.out.println('}');
+        
 
         coll.remove(-5);
         

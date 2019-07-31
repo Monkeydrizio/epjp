@@ -111,7 +111,7 @@ public class S54 {
 
     public static char voteEx(double percentile) throws Exception { // Version with exception
         if (percentile <= 0 && percentile >= 100) {
-            throw new Exception("Out of boundary");
+            throw new Exception("Out of bound");
         }
         if (percentile >= 0 && percentile <= 50) {
             return 'F';
