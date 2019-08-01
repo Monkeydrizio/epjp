@@ -10,9 +10,10 @@ public class S63 {
         System.out.println(Float.class);
         System.out.println(Double.class);
 
-        @SuppressWarnings("deprecation")
-		Integer i = new Integer(1);
-        Integer j = Integer.valueOf(2);
+        // from Java 9 on
+        // @SuppressWarnings("deprecation")
+        Integer i = new Integer(1); // questo metodo è sconsigliato da Java 9 e verrà rimosso in futuro
+        Integer j = Integer.valueOf(2); // si peferisce usare valueOf per creare i tipi Wrapper
         System.out.println(i + j);
 
         int k = j.intValue();

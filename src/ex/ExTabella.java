@@ -19,7 +19,7 @@ public class ExTabella {
 
     public Collection<Integer> getData() {
         List<Integer> tabellaSorted = new ArrayList<Integer>(tabella);
-        tabellaSorted.sort(null);        
+        tabellaSorted.sort(null);
         return tabellaSorted;
     }
- }
+}

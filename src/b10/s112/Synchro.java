@@ -21,7 +21,7 @@ public class Synchro {
 
     }
 
-    private Object mutexF = new Object();
+    private Object mutexF = new Object(); //mutex è sinonimo di Lock
     private Object mutexG = new Object();
 
     public synchronized void f() {
