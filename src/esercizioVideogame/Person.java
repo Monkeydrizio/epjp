@@ -24,7 +24,7 @@ public abstract class Person {
     // Metodi
 
     public void changeEnergy(Double hpLostOrGained) {
-        hp = hp - hpLostOrGained;        
+        hp = hp + hpLostOrGained;        
     }
 
     public boolean isAlive(Double actualHp) {
