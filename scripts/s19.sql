@@ -1,6 +1,10 @@
 select last_name
 from employees
-where last_name like '_ul%';
+where last_name like '_ul%'; -- primo carattere una cosa qualunque, poi ul e poi % sta per tutti, tipo star *
+
+select last_name
+from employees
+where last_name like '__d%';
 
 select *
 from regions
