@@ -14,5 +14,5 @@ select employee_id, nvl2(commission_pct, 'value', 'no value')
 from employees;
 
 select replace('Begin here', 'Begin', 'End'),
-	substr('ABCDEFG',3,4)
+	substr(sysdate,3,4)
 from dual;

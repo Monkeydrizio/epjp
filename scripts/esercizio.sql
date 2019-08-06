@@ -40,7 +40,7 @@ WHERE commission_pct is not null;
 
 SELECT *
 FROM employees
-WHERE first_name LIKE '%a%' OR last_name LIKE '%a%';
+WHERE first_name LIKE '%a%' OR last_name LIKE '%a%' OR first_name LIKE '%A%' OR last_name LIKE '%A%';
 
 SELECT *
 FROM departments
@@ -61,4 +61,10 @@ WHERE first_name = 'Nancy' AND last_name = 'Greenberg';
 SELECT *
 FROM employees
 WHERE manager_id = 108 ;
+
+
+
+
+
+
 
