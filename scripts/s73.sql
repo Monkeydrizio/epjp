@@ -6,7 +6,7 @@ end;
 /
 
 declare
-    v_width integer;
+    v_width integer; -- Le inizializzazioni delle variabili è obbligatoria
     v_height integer := 2;
     v_area integer := 6;
 begin
