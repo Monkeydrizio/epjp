@@ -26,7 +26,6 @@ where coder_id > 103;
 select *
 from coder_salaries;
 
-
 -- example cleanup
 drop trigger salary_update;
 drop table coder_salaries;
