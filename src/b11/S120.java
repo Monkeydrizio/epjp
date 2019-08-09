@@ -24,18 +24,27 @@ public class S120 {
 		ods.setPassword(PASSWORD);
 	}
 
-	public List<Coder> getCoderNames() throws SQLException {
+	public List<Coder> getCoders() throws SQLException {
 		try (Connection conn = ods.getConnection(); //
 				Statement stmt = conn.createStatement()) {
 			ResultSet rs = stmt.executeQuery("SELECT first_name, last_name, salary FROM coders ORDER BY 1");
 
 			List<Coder> results = new ArrayList<Coder>();
 			while (rs.next()) {
-				Coder coder = new Coder();
-				coder.fn = rs.getString(1);
-				coder.ln = rs.getString(2);
-				coder.salary = rs.getInt(3);
-				results.add(coder);
+				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getInt(3)));
+			}
+			return results;
+		}
+	}
+
+	public List<Coder> getCodersBySalary(double lower) throws SQLException {
+		try (Connection conn = ods.getConnection(); Statement stmt = conn.createStatement()) {
+			String query = "SELECT first_name, last_name, salary FROM coders WHERE salary >= "+lower+" ORDER BY 3 DESC";
+			ResultSet rs = stmt.executeQuery(query);
+
+			List<Coder> results = new ArrayList<Coder>();
+			while (rs.next()) {
+				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getInt(3)));
 			}
 			return results;
 		}
@@ -44,9 +53,12 @@ public class S120 {
 	public static void main(String[] args) {
 		try {
 			S120 sample = new S120();
-			List<Coder> names = sample.getCoderNames();
-
-			System.out.println("Coder names are: " + names);
+			//List<Coder> coders = sample.getCoders();
+			//System.out.println("Coders are: " + coders);
+			System.out.println("Coders are: " + sample.getCoders());
+			//coders = sample.getCodersBySalary(9000);
+			//System.out.println("Rich coders are: " + coders);
+			System.out.println("Coders are: " + sample.getCodersBySalary(9000));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return;
@@ -55,14 +67,47 @@ public class S120 {
 	}
 }
 
-class Coder {
-	public String fn;
-	public String ln;
-	public int salary;
+class Coder { // COSTRUITA COSì E' UN JAVA BEAN, UN CHICCO DI JAVA AHAHAHA
+	private String firstName;
+	private String lastName;
+	private int salary;
+
+	public Coder() {
+	}
+
+	public Coder(String firstName, String lastName, int salary) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.salary = salary;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
 
 	@Override
 	public String toString() {
-		return "[fn=" + fn + ", ln=" + ln + ", salary=" + salary + "]";
+		return "[firstName=" + firstName + ", lastName=" + lastName + ", salary=" + salary + "]";
 	}
 
 }
