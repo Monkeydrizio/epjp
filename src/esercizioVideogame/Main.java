@@ -1,7 +1,5 @@
 package esercizioVideogame;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry; // innerclass di Map se non l'avessi importata avrei dovuto scrivere Map.Entry
@@ -14,8 +12,8 @@ public class Main {
 		Map<String, Hero> heroes = new HashMap<String, Hero>();
 		Map<String, Villain> villains = new HashMap<String, Villain>();
 		Map<String, CommonPerson> commons = new HashMap<String, CommonPerson>();
-		Collection<Person> prisoners = new ArrayList<Person>();
-		Collection<Person> deads = new ArrayList<Person>();
+		//Collection<Person> prisoners = new ArrayList<Person>();
+		//Collection<Person> deads = new ArrayList<Person>();
 
 		// Creo Persone
 

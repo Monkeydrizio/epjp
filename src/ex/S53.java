@@ -12,7 +12,6 @@ public class S53 {
 	 */
 
 	public static double speed(double distance, double time) {
-		// TODO //crea un marker di roba da fare
 		double speed = (distance / time);
 		return speed;
 	}
